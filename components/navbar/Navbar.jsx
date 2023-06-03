@@ -30,53 +30,52 @@ const Navbar = () => {
     " bg-slate-300 text-black rounded-md transition-all ease-out duration-700 ";
   return (
     <>
-      <div className="w-full py-5">
-        <div className="flex w-full justify-between bg-red-500 grow">
-          <div>
-            <Link href={"/"} className={`${font.className} text-3xl`}>
-              Dojo-Dev
-            </Link>
-          </div>
+      <div className="flex justify-between items-center w-full py-5">
+        <div className=" w-44">
+          <Link href={"/"} className={`${font.className} text-3xl`}>
+            Dojo-Dev
+          </Link>
+        </div>
 
-          <div className="hidden lg:flex justify-between space-x-3 ">
-            {navigation.map((navItem) => (
-              <Link
-                href={navItem.href}
-                key={navItem.id}
-                className={
-                  pathname === navItem.href ? activeclass : inactiveclass
-                }
-              >
-                {navItem.name}
-              </Link>
-            ))}
+        <div className="hidden lg:flex space-x-3 grow justify-end w-full ">
+          {navigation.map((navItem) => (
+            <Link
+              href={navItem.href}
+              key={navItem.id}
+              className={
+                pathname === navItem.href ? activeclass : inactiveclass
+              }
+            >
+              {navItem.name}
+            </Link>
+          ))}
+        </div>
+        <div className=" flex relative">
+          <div className=" block lg:hidden">
+            <button onClick={() => setIsMobile(!isMobile)}>
+              {isMobile ? (
+                <XCircleIcon height={30} width={30} />
+              ) : (
+                <Bars3Icon height={30} width={30} />
+              )}
+            </button>
           </div>
-          <div className=" flex relative">
-            <div className=" block lg:hidden">
-              <button onClick={() => setIsMobile(!isMobile)}>
-                {isMobile ? (
-                  <XCircleIcon height={30} width={30} />
-                ) : (
-                  <Bars3Icon height={30} width={30} />
-                )}
-              </button>
+          {isMobile && (
+            <div className="lg:hidden flex flex-col bg-slate-800 rounded-md gap-y-1 absolute right-8 ">
+              {navigation.map((navItem) => (
+                <Link
+                  href={navItem.href}
+                  key={navItem.id}
+                  className={
+                    pathname === navItem.href ? activeclass : inactiveclass
+                  }
+                  onClick={() => setIsMobile(!isMobile)}
+                >
+                  {navItem.name}
+                </Link>
+              ))}
             </div>
-            {isMobile && (
-              <div className="lg:hidden flex flex-col bg-slate-800 rounded-md absolute right-8">
-                {navigation.map((navItem) => (
-                  <Link
-                    href={navItem.href}
-                    key={navItem.id}
-                    className={
-                      pathname === navItem.href ? activeclass : inactiveclass
-                    }
-                  >
-                    {navItem.name}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
+          )}
         </div>
       </div>
     </>
