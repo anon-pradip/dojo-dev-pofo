@@ -64,11 +64,11 @@ const navigation = [
   },
 ];
 
-export default function Example() {
+export default function Footer() {
   return (
-    <footer className="bg-inherit w-full">
-      <div className="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between md:gap-x-7 lg:px-8 border-slate-600 border-t">
-        <div className="flex justify-center space-x-6 md:order-2">
+    <footer className="w-full mt-auto py-2">
+      <div className="mx-auto max-w-7xl px-6 md:flex md:items-center md:justify-between md:gap-x-7 lg:px-8 border-slate-600 border-t">
+        <div className="flex justify-center mt-2 gap-x-6 md:order-2">
           {navigation.map((item) => (
             <Link
               key={item.name}
