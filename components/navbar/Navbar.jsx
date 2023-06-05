@@ -61,7 +61,7 @@ const Navbar = () => {
             </button>
           </div>
           {isMobile && (
-            <div className="lg:hidden flex flex-col bg-slate-800 rounded-md gap-y-1 absolute right-8 ">
+            <div className="lg:hidden flex flex-col bg-slate-800 rounded-md gap-y-1 absolute right-8 z-50">
               {navigation.map((navItem) => (
                 <Link
                   href={navItem.href}
