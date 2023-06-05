@@ -10,7 +10,12 @@ const Contact = () => {
       </h1>
       <div className=" flex flex-col gap-x-11 lg:flex-row justify-between items-center">
         <div>
-          <Image src={ContactImage} height={300} width={300} />
+          <Image
+            src={ContactImage}
+            height={300}
+            width={300}
+            className="image"
+          />
         </div>
 
         {/* Form */}

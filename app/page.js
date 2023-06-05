@@ -31,7 +31,7 @@ export default function Home() {
           src={Hero}
           height={400}
           width={400}
-          className="h-72 w-72 md:h-auto md:w-auto"
+          className="image h-72 w-72 md:h-auto md:w-auto"
         />
       </div>
     </div>

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { Rubik_Puddles } from "next/font/google";
 import Link from "next/link";
 import { XCircleIcon, Bars3Icon } from "@heroicons/react/24/outline";
+import ToggleDarkMode from "../ToggleDarkMode/ToggleDarkMode";
 
 const font = Rubik_Puddles({
   subsets: ["latin"],
@@ -37,7 +38,8 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="hidden lg:flex space-x-3 grow justify-end w-full ">
+        <div className="hidden lg:flex space-x-3 grow justify-end w-full items-center ">
+          <ToggleDarkMode />
           {navigation.map((navItem) => (
             <Link
               href={navItem.href}
@@ -61,7 +63,8 @@ const Navbar = () => {
             </button>
           </div>
           {isMobile && (
-            <div className="lg:hidden flex flex-col bg-slate-800 rounded-md gap-y-1 absolute right-8 z-50">
+            <div className="lg:hidden flex flex-col bg-slate-800 rounded-md gap-y-1 absolute right-8 z-50 pt-3 justify-center">
+              <ToggleDarkMode />
               {navigation.map((navItem) => (
                 <Link
                   href={navItem.href}

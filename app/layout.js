@@ -2,6 +2,7 @@ import Navbar from "@/components/navbar/Navbar";
 import "./globals.css";
 import { Inter, Roboto } from "next/font/google";
 import Footer from "@/components/footer/Footer";
+import Providers from "@/components/providers/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,12 +14,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-black text-white `}>
-        <div className=" flex flex-col items-center max-w-md md:max-w-xl lg:max-w-5xl px-2 mx-auto min-h-screen">
-          <Navbar />
-          {children}
-          <Footer />
-        </div>
+      <body className={`${inter.className} `}>
+        <Providers>
+          <div className=" flex flex-col items-center max-w-md md:max-w-xl lg:max-w-5xl px-2 mx-auto min-h-screen">
+            <Navbar />
+            {children}
+            <Footer />
+          </div>
+        </Providers>
       </body>
     </html>
   );
