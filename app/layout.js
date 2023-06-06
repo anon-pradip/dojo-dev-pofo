@@ -3,6 +3,7 @@ import "./globals.css";
 import { Inter, Roboto } from "next/font/google";
 import Footer from "@/components/footer/Footer";
 import Providers from "@/components/providers/ThemeProvider";
+import AuthProvider from "@/components/AuthProvider/AuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,11 +17,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${inter.className} `}>
         <Providers>
-          <div className=" flex flex-col items-center dark:text-slate-black max-w-md md:max-w-xl lg:max-w-5xl px-2 mx-auto min-h-screen">
-            <Navbar />
-            {children}
-            <Footer />
-          </div>
+          <AuthProvider>
+            <div className=" flex flex-col items-center dark:text-slate-black max-w-md md:max-w-xl lg:max-w-5xl px-2 mx-auto min-h-screen">
+              <Navbar />
+              {children}
+              <Footer />
+            </div>
+          </AuthProvider>
         </Providers>
       </body>
     </html>
