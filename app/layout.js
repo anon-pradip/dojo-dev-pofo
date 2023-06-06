@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${inter.className} `}>
         <Providers>
-          <div className=" flex flex-col items-center max-w-md md:max-w-xl lg:max-w-5xl px-2 mx-auto min-h-screen">
+          <div className=" flex flex-col items-center dark:text-slate-black max-w-md md:max-w-xl lg:max-w-5xl px-2 mx-auto min-h-screen">
             <Navbar />
             {children}
             <Footer />

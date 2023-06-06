@@ -5,7 +5,7 @@ import ContactImage from "public/contact.png";
 const Contact = () => {
   return (
     <div>
-      <h1 className=" text-center text-6xl font-bold text-slate-300 py-6">
+      <h1 className=" text-center text-6xl font-bold text-slate-800 dark:text-slate-300 py-6">
         Let's Keep in Touch
       </h1>
       <div className=" flex flex-col gap-x-11 lg:flex-row justify-between items-center">
@@ -61,7 +61,7 @@ const Contact = () => {
                 placeholder="message"
                 cols="30"
                 rows="5"
-                className="placeholder:text-gray-400 text-gray-900 rounded-md px-3 py-1.5"
+                className="text-gray-900 rounded-md px-3 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
           </div>

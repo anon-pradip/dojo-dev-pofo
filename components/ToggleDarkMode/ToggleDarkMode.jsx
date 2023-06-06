@@ -26,7 +26,6 @@ export default function ToggleDarkMode() {
   if (!mounted) {
     return null;
   }
-  console.log(theme);
   return (
     <Menu as="div" className="relative inline-block text-left mr-3">
       <div>

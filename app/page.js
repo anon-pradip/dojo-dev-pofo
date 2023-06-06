@@ -10,7 +10,7 @@ export default function Home() {
         <h1 className=" bg-gradient-to-b from-green-500 to-green-200 text-transparent bg-clip-text text-6xl font-bold">
           Better design for your products.
         </h1>
-        <p className="text-slate-400">
+        <p className="text-slate-400 dark:text-slate-600">
           Turning your ideas into reality. Our global network of talented
           professionals from the tech industry collaborate to deliver
           groundbreaking solutions that redefine industries and elevate user
