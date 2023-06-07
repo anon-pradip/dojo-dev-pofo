@@ -1,8 +1,9 @@
-import User from "@/models/User";
 import connect from "@/utils/db";
 import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google";
 import bcrypt from "bcryptjs";
+import CredentialsProvider from "next-auth/providers/credentials";
+import { User } from "@/models/User";
 
 export const authOptions = {
   providers: [
@@ -10,7 +11,7 @@ export const authOptions = {
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_SECRET_KEY,
     }),
-    CredentialsProviders({
+    CredentialsProvider({
       id: "credentials",
       name: "Credentials",
       async authorize(credentials) {
@@ -39,6 +40,9 @@ export const authOptions = {
       },
     }),
   ],
+  pages: {
+    error: "/dashboard/login",
+  },
 };
 const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST };
