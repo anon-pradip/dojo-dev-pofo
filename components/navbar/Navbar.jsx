@@ -63,7 +63,7 @@ const Navbar = () => {
             </button>
           </div>
           {isMobile && (
-            <div className="lg:hidden flex flex-col bg-slate-800 rounded-md gap-y-1 absolute right-8 z-50 pt-3 justify-center">
+            <div className="lg:hidden flex flex-col bg-slate-400 rounded-md gap-y-1 absolute right-8 z-50 pt-3 justify-center">
               <ToggleDarkMode />
               {navigation.map((navItem) => (
                 <Link
