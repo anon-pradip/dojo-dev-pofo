@@ -6,7 +6,7 @@ import { Rubik_Puddles } from "next/font/google";
 import Link from "next/link";
 import { XCircleIcon, Bars3Icon } from "@heroicons/react/24/outline";
 import ToggleDarkMode from "../ToggleDarkMode/ToggleDarkMode";
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
 const font = Rubik_Puddles({
   subsets: ["latin"],
@@ -25,6 +25,7 @@ const navigation = [
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
   const pathname = usePathname();
+  const session = useSession();
   const inactiveclass =
     " px-3 py-2 capitalize hover:bg-slate-400 hover:text-black hover:rounded-md";
   const activeclass =
@@ -84,12 +85,14 @@ const Navbar = () => {
                   {navItem.name}
                 </Link>
               ))}
-              <button
-                onClick={signOut}
-                className=" px-2 bg-green-600 text-white rounded-sm"
-              >
-                Logout
-              </button>
+              {session.status === "authenticated" && (
+                <button
+                  onClick={signOut}
+                  className="my-2 px-2 py-2 bg-green-600 text-white rounded-md"
+                >
+                  Logout
+                </button>
+              )}
             </div>
           )}
         </div>
