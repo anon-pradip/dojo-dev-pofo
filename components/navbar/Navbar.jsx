@@ -6,6 +6,7 @@ import { Rubik_Puddles } from "next/font/google";
 import Link from "next/link";
 import { XCircleIcon, Bars3Icon } from "@heroicons/react/24/outline";
 import ToggleDarkMode from "../ToggleDarkMode/ToggleDarkMode";
+import { signOut } from "next-auth/react";
 
 const font = Rubik_Puddles({
   subsets: ["latin"],
@@ -51,6 +52,12 @@ const Navbar = () => {
               {navItem.name}
             </Link>
           ))}
+          <button
+            onClick={signOut}
+            className=" px-2 bg-green-600 text-white rounded-sm"
+          >
+            Logout
+          </button>
         </div>
         <div className=" flex relative">
           <div className=" block lg:hidden">
@@ -77,6 +84,12 @@ const Navbar = () => {
                   {navItem.name}
                 </Link>
               ))}
+              <button
+                onClick={signOut}
+                className=" px-2 bg-green-600 text-white rounded-sm"
+              >
+                Logout
+              </button>
             </div>
           )}
         </div>
